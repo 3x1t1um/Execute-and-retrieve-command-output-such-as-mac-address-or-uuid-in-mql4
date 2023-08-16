@@ -1,0 +1,12 @@
+#import "shell32.dll"
+  int ShellExecuteW(int hwnd, string Operation, string File, string Parameters, string Directory, int ShowCmd);
+#import
+
+int OnInit()
+  {
+   string src_path = TerminalInfoString(TERMINAL_DATA_PATH) + "\\MQL4\\Files\\";
+   string dst_file = "output.txt";
+
+   ShellExecuteW(NULL, "open", "cmd", "/c ipconfig /all > "+src_path+dst_file, NULL, NULL);
+   return(INIT_SUCCEEDED);
+}
