@@ -4,9 +4,8 @@
 
 int OnInit()
   {
-   string src_path = TerminalInfoString(TERMINAL_DATA_PATH) + "\\MQL4\\Files\\";
-   string dst_file = "output.txt";
+   string path = TerminalInfoString(TERMINAL_DATA_PATH) + "\\MQL4\\Files\\output.txt";
 
-   ShellExecuteW(NULL, "open", "cmd", "/c wmic csproduct get UUID > "+src_path+dst_file, NULL, NULL);
+   ShellExecuteW(NULL, "open", "cmd", "/c wmic csproduct get UUID > "+path, NULL, NULL);
    return(INIT_SUCCEEDED);
 }
